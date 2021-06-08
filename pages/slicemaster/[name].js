@@ -1,6 +1,6 @@
 import Image from 'next/image';
-import Meta from '../../components/Meta';'../../
-import client, { previewClient, imageBuilder } from sanity';
+import Meta from '../../components/Meta';
+import client, { previewClient, imageBuilder } from '../../sanity';
 const getClient = (preview) => (preview ? previewClient : client);
 
 const SingleSliceMaster = ({sliceMaster,params}) => {
