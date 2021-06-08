@@ -3,10 +3,13 @@ import styled from 'styled-components';
 
 
 export const HomePageGrid = styled.div`
-	
+	--columns: 2;
 	display:grid;
 	gap: 2rem;
-	grid-template-columns: repeat(2, minmax(auto, 1fr));
+	grid-template-columns: repeat(var(--columns), minmax(auto, 1fr));
+    @media (max-width: 800px) {
+    	--columns:1;
+    }
 
 `;
 
@@ -30,9 +33,12 @@ export const ItemStyles = styled.div`
 	}
 	p {
 		position: absolute;
-		transform: rotate(-2deg) translateY(-140%);
+		top:0;
+		transform: rotate(-2deg) translateY(-10px);
+		margin: 0;
 		width: 100%;
 		left: 0;
+		font-size: clamp(12px, 5vw, 20px);
 		.mark {
 			display: inline;
 		}

@@ -7,7 +7,7 @@ import Pagination from '../components/Pagination';
 const getClient = (preview) => (preview ? previewClient : client);
 
 const SliceMasters = ({allSliceMasters, skip}) => {
-	console.log(allSliceMasters, skip);
+	
 	const totalCount = allSliceMasters[0].totalCount;
   return (
   	<>

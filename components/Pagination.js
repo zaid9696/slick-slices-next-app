@@ -11,6 +11,12 @@ const PaginationStyles = styled.div`
 	margin: 2rem 0;
 	text-align: center;
 	border-radius: 5px;
+	@media {
+		.word {
+			display: none;
+		}
+		font-size: 1.4rem;
+	}
 	& > * {
 		padding: 1rem;
 		flex: 1;
@@ -39,12 +45,11 @@ const Pagination = ({
 	const nextPage = currentPage + 1;
 	const hasNextPage = nextPage <= totalPage;
 	const hasPrevPage = prevPage >= 1;
-	console.log({pageSize,totalCount,skip, currentPage, base})
   return (
     <PaginationStyles>
-    	<Link  href={`/${base}/${prevPage == 1 ? "" : prevPage}`}>
+    	<Link title="Prev Page"  href={`/${base}/${prevPage == 1 ? "" : prevPage}`}>
 	    	<a disabled={!hasPrevPage}>
-	    		&#8592; Prev
+	    		&#8592; <span className="word">Prev</span>
 	    	</a>
     	</Link>
     	{Array.from({length: totalPage}).map((_, i) => (
@@ -52,9 +57,9 @@ const Pagination = ({
     				<a className={i + 1 == currentPage ? "active" : ""}>{i + 1}</a>
     			</Link>
     		))}
-    	<Link  href={`/${base}/${nextPage}`}>
+    	<Link title="Next Page" href={`/${base}/${nextPage}`}>
 	    	<a disabled={!hasNextPage}>
-	    		 Next &#8594;
+	    		 <span className="word">Next</span> &#8594;
 	    	</a>
     	</Link>
    </PaginationStyles>

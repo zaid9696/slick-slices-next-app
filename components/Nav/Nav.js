@@ -38,13 +38,40 @@ const NavStyles = styled.nav`
     a {
         font-size: 3rem;
         text-decoration: none;  
+        display: block;
+        @media (max-width: 800px) {
+            font-size: 2rem;
+        }
         &:hover {
             color: var(--red);
         }
         &.activePage {
             color: var(--red);
+    }
+    }
+
+    @media (max-width: 800px) {
+        --columns: 4;
+        margin-bottom: 2rem;
+        ul {
+
+            grid-template-rows: auto auto;
+            grid-template-columns: repeat(var(--columns), 1fr);
+            justify-items: center;
         }
+        .logo-item {
+            order:0;
+            grid-column: 1 / -1;
         }
+        .logo {
+            transform: none;
+        }
+    }
+    @media (max-width: 500px) {
+
+        --columns: 2;
+    }
+
 
 `;
 
@@ -58,7 +85,7 @@ const Nav = (props) => {
     		<li>
     			<NavLink href="/pizzas" activeClassName="activePage"><a>Pizza Menu</a></NavLink>
     		</li>
-    		<li>
+    		<li className="logo-item">
     			<Link href="/" passHref><a><Logo /></a></Link>
     		</li>
     		<li>

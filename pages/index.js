@@ -5,7 +5,7 @@ import LoadingGrid from '../components/LoadingGrid';
 import ItemGrid from '../components/ItemGrid';
 
 const CurrentlySlicing = ({slicemasters}) => {
-  console.log(slicemasters);
+
   return (
       <div>
       <h2><span className="mark tilt"> SliceMasters on </span></h2>
@@ -35,7 +35,7 @@ const Home = ({allPosts}) => {
 
     const {hotSlices, slicemasters} = allPosts[0];
 
-    console.log({hotSlices, slicemasters});
+    
     return (
 
       <div className="center">
