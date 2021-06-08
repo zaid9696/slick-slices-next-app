@@ -10,5 +10,6 @@ module.exports = withFonts(withImages({
   images: {
     domains: ['cdn.sanity.io', 'www.totalwine.com'],
   },
+  target: 'serverless'
 }))
 
